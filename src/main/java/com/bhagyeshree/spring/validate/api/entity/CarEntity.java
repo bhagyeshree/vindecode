@@ -1,13 +1,21 @@
 package com.bhagyeshree.spring.validate.api.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
 public class CarEntity {
 	
+	@Column(name="Message")
 	private String Message;
 
+	@Column(name="results")
     private Results[] Results;
 
+	@Column(name="count")
     private String Count;
 
+	@Column(name="searchcriteria")
     private String SearchCriteria;
 
     public String getMessage ()

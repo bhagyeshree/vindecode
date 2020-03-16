@@ -1,5 +1,7 @@
 package com.bhagyeshree.spring.validate.api.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -7,12 +9,14 @@ import javax.persistence.Id;
 import org.hibernate.annotations.GeneratorType;
 
 
+@Entity
 public class Results {
 	
 	
-	
+	@Column(name="variable")
 	private String Variable;
 
+	@Column(name="value")
     private String Value;
 
     @Id
@@ -20,6 +24,7 @@ public class Results {
     private String ValueId;
 
     @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String VariableId;
 
     public String getVariable ()
