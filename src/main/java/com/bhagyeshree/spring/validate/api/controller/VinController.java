@@ -19,16 +19,18 @@ public class VinController {
 	
 	
 	@GetMapping("/vinnumber")
-	public ResponseEntity getVinNumber()
+	public List<Object> getVinNumber()
 	{
+		
+		//Here i can return responseEntity 
 		
 		String url = "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinExtended/%3CVIN%3E?format=json";
 		//Object[] objects= restTemplate.getForObject(url , Object[].class);
 		Object[] objects= restTemplate.getForObject(url , Object[].class);
 
-		return Arrays.asList(objects);
+	   return Arrays.asList(objects);
 		
-		return new ResponseEntity;
+		//return new ResponseEntity(null);
 	
 		//System.out.println(objects);
 	
